@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/arriba"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="84dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/nova"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/century_gothic"
+        android:text="usuario"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_salir"
+        android:layout_width="79dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="5dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/salir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/textView_"
+        android:layout_width="200dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/century_gothic"
+        android:gravity="center"
+        android:text="Select an option"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="243dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/century_gothic"
+        android:gravity="center"
+        android:text="(Seleciona una opción)"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_" />
+
+    <ImageView
+        android:id="@+id/cuento"
+        android:layout_width="95dp"
+        android:layout_height="106dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bloques"
+        app:layout_constraintEnd_toStartOf="@+id/btn_numeros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letras" />
+
+    <ImageView
+        android:id="@+id/letras"
+        android:layout_width="95dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="225dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fam"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mov_familia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_mov_familia"
+        android:layout_width="241dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="230dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/century_gothic"
+        android:hapticFeedbackEnabled="false"
+        android:text="Family members/La familia"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/letras"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_numeros"
+        android:layout_width="241dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/century_gothic"
+        android:hapticFeedbackEnabled="false"
+        android:text="The numbers/ los números"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cuento"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mov_familia" />
+
+    <ImageView
+        android:id="@+id/adivina"
+        style="@style/BotonSinFondo"
+        android:layout_width="95dp"
+        android:layout_height="106dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/movimiento"
+        app:layout_constraintEnd_toStartOf="@+id/btn_movimiento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cuento" />
+    <Button
+        android:id="@+id/btn_movimiento"
+        android:layout_width="241dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/aqua"
+        android:fontFamily="@font/century_gothic"
+        android:hapticFeedbackEnabled="false"
+        android:text="Movimiento/robot movement"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cuento"
+        app:layout_constraintTop_toBottomOf="@+id/btn_numeros" />
+
+    <ImageView
+        android:id="@+id/movimiento"
+        style="@style/BotonSinFondo"
+        android:layout_width="95dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/song"
+        app:layout_constraintEnd_toStartOf="@+id/btn_movimiento"
+        app:layout_constraintTop_toBottomOf="@+id/adivina" />
+
+    <Button
+        android:id="@+id/btn_canciones"
+        android:layout_width="241dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/century_gothic"
+        android:hapticFeedbackEnabled="false"
+        android:text="Canciones/songs"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cuento"
+        app:layout_constraintTop_toBottomOf="@+id/btn_movimiento" />
+
+
+    <ImageButton
+        android:id="@+id/listen"
+        style="@style/BotonSinFondo"
+        android:layout_width="73dp"
+        android:layout_height="115dp"
+        android:layout_marginBottom="5dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sonido"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
