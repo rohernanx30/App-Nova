@@ -37,6 +37,14 @@ class Bienvenida : AppCompatActivity() {
         }
     }
     private fun openmenu(nombreUsuario:String){
+        // Detener el audio si está sonando
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+                it.release()
+                mediaPlayer = null
+            }
+        }
         var intent = Intent(this,Menu::class.java)
         intent.putExtra("nombre_usuario",nombreUsuario)
         startActivity(intent)
@@ -44,5 +52,11 @@ class Bienvenida : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer?.release()
+    }
+    override fun onResume() {
+        super.onResume()
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.nombre)
+        }
     }
 }

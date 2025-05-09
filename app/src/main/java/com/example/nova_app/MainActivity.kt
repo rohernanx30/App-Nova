@@ -24,12 +24,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openBienvenida(){
-        var intent = Intent(this,Bienvenida::class.java)
-        startActivity(intent)
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-    }
-    override fun onDestroy() {
+            // Detener el audio si está sonando
+            mediaPlayer?.let {
+                if (it.isPlaying) {
+                    it.stop()
+                    it.release()
+                    mediaPlayer = null
+                }
+            }
+            val intent = Intent(this, Bienvenida::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+        override fun onDestroy() {
         super.onDestroy()
         mediaPlayer?.release()
+    }
+    override fun onResume() {
+        super.onResume()
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.bienvenida)
+        }
     }
 }

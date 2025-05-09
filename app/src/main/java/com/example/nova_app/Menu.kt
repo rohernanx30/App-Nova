@@ -49,6 +49,14 @@ class Menu : AppCompatActivity() {
         }
     }
     private fun openmovimiento(nombreUsuario: String) {
+        // Detener el audio si está sonando
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+                it.release()
+                mediaPlayer = null
+            }
+        }
         var intent = Intent(this,movimiento_robot::class.java)
         intent.putExtra("nombre_usuario",nombreUsuario)
         startActivity(intent)
@@ -56,16 +64,40 @@ class Menu : AppCompatActivity() {
 
     //funciones privadas para mover entre pestañas
     private fun openfamilia(nombreUsuario:String){
+        // Detener el audio si está sonando
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+                it.release()
+                mediaPlayer = null
+            }
+        }
         var intent = Intent(this,familia::class.java)
         intent.putExtra("nombre_usuario",nombreUsuario)
         startActivity(intent)
     }
     private fun opennumeros(nombreUsuario:String){
+        // Detener el audio si está sonando
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+                it.release()
+                mediaPlayer = null
+            }
+        }
         var intent = Intent(this,numeros::class.java)
         intent.putExtra("nombre_usuario",nombreUsuario)
         startActivity(intent)
     }
     private fun opensong(nombreUsuario:String){
+        // Detener el audio si está sonando
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+                it.release()
+                mediaPlayer = null
+            }
+        }
         var intent = Intent(this,canciones::class.java)
         intent.putExtra("nombre_usuario",nombreUsuario)
         startActivity(intent)
@@ -91,5 +123,11 @@ class Menu : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer?.release()
+    }
+    override fun onResume() {
+        super.onResume()
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.menu)
+        }
     }
 }
