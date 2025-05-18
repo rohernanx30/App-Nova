@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/banner" />
 
     <ImageButton
-        android:id="@+id/derecha"
+        android:id="@+id/btn_derecha"
         style="@style/BotonSinFondo"
         android:layout_width="108dp"
         android:layout_height="150dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/izquierda"
+        android:id="@+id/btn_izquierda"
         style="@style/BotonSinFondo"
         android:layout_width="108dp"
         android:layout_height="150dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/arriba"
+        android:id="@+id/btn_adelante"
         style="@style/BotonSinFondo"
         android:layout_width="108dp"
         android:layout_height="150dp"
@@ -77,7 +77,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/abajo"
+        android:id="@+id/btnatras"
         style="@style/BotonSinFondo"
         android:layout_width="108dp"
         android:layout_height="150dp"

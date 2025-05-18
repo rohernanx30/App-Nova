@@ -7,10 +7,6 @@ import com.example.nova_app.databinding.ActivityMovimientoRobotBinding
 
 class movimiento_robot : AppCompatActivity() {
     var mediaPlayer: MediaPlayer? = null
-    var mediaPlayer1: MediaPlayer? = null
-    var mediaPlayer2: MediaPlayer? = null
-    var mediaPlayer3: MediaPlayer? = null
-    var mediaPlayer4: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,10 +14,6 @@ class movimiento_robot : AppCompatActivity() {
         setContentView(binding.root)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.movimiento)
-        mediaPlayer1 = MediaPlayer.create(this, R.raw.adelante)
-        mediaPlayer2 = MediaPlayer.create(this, R.raw.atras)
-        mediaPlayer3 = MediaPlayer.create(this, R.raw.derecha)
-        mediaPlayer4 = MediaPlayer.create(this, R.raw.izquierda)
 
         //agg los binding para moverse
         binding.inicio.setOnClickListener {
@@ -31,25 +23,22 @@ class movimiento_robot : AppCompatActivity() {
             mediaPlayer?.start()
         }
         //Sonido de los botones de movimiento
-        binding.arriba.setOnClickListener {
-            mediaPlayer1?.start()
+        binding.btnAdelante.setOnClickListener {
+
         }
-        binding.abajo.setOnClickListener {
-            mediaPlayer2?.start()
+        binding.btnatras.setOnClickListener {
+
         }
-        binding.derecha.setOnClickListener {
-            mediaPlayer3?.start()
+        binding.btnIzquierda.setOnClickListener {
+
         }
-        binding.izquierda.setOnClickListener {
-            mediaPlayer4?.start()
+        binding.btnDerecha.setOnClickListener {
+
         }
     }
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer?.release()
-        mediaPlayer2?.release()
-        mediaPlayer1?.release()
-        mediaPlayer3?.release()
-        mediaPlayer4?.release()
+
     }
 }
